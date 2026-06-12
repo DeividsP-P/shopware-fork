@@ -3,7 +3,7 @@ entries:
   shopware:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-06-12T13:08:20.481779+03:00"
+    created: "2026-06-12T13:49:29.307016+03:00"
     dependencies:
     - condition: percona.enabled
       name: pxc-operator
@@ -66,4 +66,69 @@ entries:
     urls:
     - https://deividsp-p.github.io/shopware-fork/charts/shopware-1.0.1.tgz
     version: 1.0.1
-generated: "2026-06-12T13:08:20.460032+03:00"
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-06-12T13:49:29.286281+03:00"
+    dependencies:
+    - condition: percona.enabled
+      name: pxc-operator
+      repository: https://percona.github.io/percona-helm-charts/
+      version: 1.14.0
+    - condition: rustfs.enabled
+      name: rustfs
+      repository: https://rustfs.github.io/helm
+      version: 0.0.73
+    - alias: valkeyapp
+      condition: valkeyapp.enabled
+      name: valkey
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 1.0.1
+    - alias: valkeysession
+      condition: valkeysession.enabled
+      name: valkey
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 1.0.1
+    - alias: valkeyworker
+      condition: valkeyworker.enabled
+      name: valkey
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 1.0.1
+    - alias: redisapp
+      condition: redisapp.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 19.1.2
+    - alias: redissession
+      condition: redissession.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 19.1.2
+    - alias: redisworker
+      condition: redisworker.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 19.1.2
+    - alias: grafana
+      condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 8.5.0
+    - alias: prometheus
+      condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 25.24.1
+    - alias: otel-collector
+      condition: otel-collector.enabled
+      name: opentelemetry-collector
+      repository: https://open-telemetry.github.io/opentelemetry-helm-charts
+      version: 0.108.0
+    description: A Helm chart for deploying a Shopware shop on Kubernetes. Requires
+      the Shopware Operator chart to be installed.
+    digest: bc75e5bcddda05f7c1e992d3d71eebd55d41cf71d6bdab27b5baa6a0208de8b1
+    name: shopware
+    type: application
+    urls:
+    - https://deividsp-p.github.io/shopware-fork/charts/shopware-1.0.0.tgz
+    version: 1.0.0
+generated: "2026-06-12T13:49:29.263244+03:00"
